@@ -2,6 +2,8 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21410220.svg)](https://doi.org/10.5281/zenodo.21410220)
 
+**Site: <https://olafandreas.github.io/Lattice-model/>** — interactive 3D lattice explorer, the paper, the LM-2026 forward-prediction registry, and the audit reports.
+
 Rebuild of the **OptionSet lattice** particle-slot model. Design and provenance:
 [MODEL_DESIGN.md](MODEL_DESIGN.md).
 
