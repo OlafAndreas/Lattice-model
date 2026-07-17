@@ -71,6 +71,7 @@ sharper predictions, our ±2σ windows still contain them (Ξ_bb: KR's
 ## Timestamping
 
 This file, the frozen code, and the test suite constitute the
-registration. For an independent timestamp, commit this repository state
-to a public host and/or archive it with a DOI (Zenodo) — see the project
-roadmap.
+registration. **Independent timestamp: archived at Zenodo as
+DOI [10.5281/zenodo.21410220](https://doi.org/10.5281/zenodo.21410220)
+(published 2026-07-17), with the source at
+https://github.com/OlafAndreas/Lattice-model (commit b109204).**

@@ -1,5 +1,7 @@
 # LatticeModel
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21410220.svg)](https://doi.org/10.5281/zenodo.21410220)
+
 Rebuild of the **OptionSet lattice** particle-slot model. Design and provenance:
 [MODEL_DESIGN.md](MODEL_DESIGN.md).
 
