@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Historical Precision Audit</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="site.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Historical Precision Audit</h1>
+</header>
+<h1 id="failed-predictions-audit-results">Failed-predictions audit —
+results</h1>
+<p>Corpus of historical lattice-style gap-predictions, each sourced to
+its original publication and resolving evidence (design:
+docs/failed-predictions-audit.md).</p>
+<p><strong>Protocol caveat:</strong> in/out-of-class and within/beyond
+labels were assigned by a single rater from the prediction bases; the
+design’s blind two-rater protocol still requires a second independent
+pass.</p>
+<h2 id="corpus">Corpus</h2>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr>
+<th>prediction</th>
+<th>status</th>
+<th>class</th>
+<th>basis</th>
+<th>prediction source</th>
+<th>resolution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>eta</td>
+<td>confirmed</td>
+<td>within</td>
+<td>eighth pseudoscalar of the meson octet</td>
+<td>Gell-Mann, CTSL-20 (1961): ‘χ⁰’, I=0, Y=0, 0⁻, ‘fairly low mass’
+[verified from the OSTI scan]; Ne’eman, Nucl. Phys. 26, 222 (1961)</td>
+<td>Pevsner et al., Phys. Rev. Lett. 7, 421 (1961) [3π resonance ~550
+MeV]; 0⁻ established: Bastien et al., Phys. Rev. Lett. 8, 114
+(1962)</td>
+</tr>
+<tr>
+<td>Omega-</td>
+<td>confirmed</td>
+<td>within</td>
+<td>decuplet corner, mass via GMO equal spacing</td>
+<td>Gell-Mann, Proc. Int. Conf. High-Energy Nucl. Phys., Geneva 1962
+(CERN), p. 805: S=−3, I=0, Q=−1, ~1685 MeV, metastable</td>
+<td>Barnes et al., Phys. Rev. Lett. 12, 204 (1964): 1686 ± 12 MeV,
+targeted search</td>
+</tr>
+<tr>
+<td>charm</td>
+<td>confirmed</td>
+<td>within</td>
+<td>quark-lepton doublet symmetry (GIM completion)</td>
+<td>Bjorken &amp; Glashow, ‘Elementary Particles and SU(4)’, Phys. Lett.
+11, 255 (1964); GIM, Phys. Rev. D 2, 1285 (1970); mass ~1.5 GeV:
+Gaillard &amp; Lee, Phys. Rev. D 10, 897 (1974)</td>
+<td>J/ψ: Aubert et al., Phys. Rev. Lett. 33, 1404 (1974); Augustin et
+al., Phys. Rev. Lett. 33, 1406 (1974)</td>
+</tr>
+<tr>
+<td>top</td>
+<td>confirmed</td>
+<td>within</td>
+<td>weak-isospin partner of the b quark</td>
+<td>Kobayashi &amp; Maskawa, Prog. Theor. Phys. 49, 652 (1973); topless
+models excluded: Kane &amp; Peskin, Nucl. Phys. B 195, 29 (1982); EW-fit
+mass 162±9 GeV: Ellis, Fogli &amp; Lisi, Phys. Lett. B 333, 118
+(1994)</td>
+<td>CDF, Phys. Rev. Lett. 74, 2626 (1995); D0, Phys. Rev. Lett. 74, 2632
+(1995); m_t ≈ 176 GeV</td>
+</tr>
+<tr>
+<td>nu_tau</td>
+<td>confirmed</td>
+<td>within</td>
+<td>lepton doublet partner of the tau</td>
+<td>structural (doublet completion) after the tau: Perl et al., Phys.
+Rev. Lett. 35, 1489 (1975); no single dedicated prediction paper</td>
+<td>DONUT, Phys. Lett. B 504, 218 (2001); announced 2000</td>
+</tr>
+<tr>
+<td>tau mass (Koide)</td>
+<td>confirmed</td>
+<td>within</td>
+<td>empirical mass relation over the charged-lepton triple</td>
+<td>Koide, Lett. Nuovo Cimento 34, 201 (1982); predicted m_τ = 1776.97
+MeV vs then-accepted ~1784 MeV</td>
+<td>BES, Phys. Rev. Lett. 69, 3021 (1992): m_τ = 1776.9 +0.4/−0.5 ± 0.2
+MeV; PDG today 1776.86 ± 0.12</td>
+</tr>
+<tr>
+<td>Xi_cc</td>
+<td>confirmed</td>
+<td>within</td>
+<td>SU(4) doubly-charmed baryon multiplet slot</td>
+<td>De Rújula, Georgi &amp; Glashow, Phys. Rev. D 12, 147 (1975): ccq at
+3550–3760 MeV; sharpest pre-discovery: Karliner &amp; Rosner, Phys.
+Rev. D 90, 094007 (2014): 3627 ± 12 MeV</td>
+<td>LHCb, Phys. Rev. Lett. 119, 112001 (2017): Ξcc⁺⁺ at 3621.40 ± 0.78
+MeV</td>
+</tr>
+<tr>
+<td>Omega_b/Xi_b</td>
+<td>confirmed</td>
+<td>within</td>
+<td>bottom-baryon multiplet slots</td>
+<td>Roncaglia, Lichtenberg &amp; Predazzi, Phys. Rev. D 52, 1722 (1995):
+Ξ_b 5810 ± 40, Ω_b 6060 ± 50 MeV</td>
+<td>Ξ_b: D0, Phys. Rev. Lett. 99, 052001 and CDF, 99, 052002 (2007);
+Ω_b: D0, Phys. Rev. Lett. 101, 232002 (2008) / CDF, Phys. Rev. D 80,
+072003 (2009); precision: LHCb, Phys. Rev. Lett. 110, 182001 (2013):
+5795.8 / 6046.0 MeV</td>
+</tr>
+<tr>
+<td>Theta+(1540)</td>
+<td>refuted</td>
+<td>beyond</td>
+<td>apex of a new baryon antidecuplet (S=+1, ~1530 MeV, narrow)</td>
+<td>Diakonov, Petrov &amp; Polyakov, Z. Phys. A 359, 305 (1997); claim:
+Nakano et al. (LEPS), Phys. Rev. Lett. 91, 012002 (2003)</td>
+<td>CLAS high-statistics nulls: Battaglieri et al., Phys. Rev. Lett. 96,
+042001 (2006); McKinnon et al., Phys. Rev. Lett. 96, 212001 (2006); PDG
+2008 verdict (Wohl, in Phys. Lett. B 667, 1): claimed pentaquarks ‘do
+not exist’</td>
+</tr>
+<tr>
+<td>Xi3/2–(1862)</td>
+<td>refuted</td>
+<td>beyond</td>
+<td>second slot of the same antidecuplet (S=-2, Q=-2)</td>
+<td>antidecuplet slot of Diakonov et al. (1997) [predicted ~2070 MeV];
+claim: Alt et al. (NA49), Phys. Rev. Lett. 92, 042003 (2004) at 1862
+MeV</td>
+<td>nulls with far larger Ξ samples: HERA-B, Phys. Rev. Lett. 93, 212003
+(2004); WA89, Phys. Rev. C 70, 022201 (2004); COMPASS, Eur. Phys. J. C
+41, 469 (2005); delisted after PDG 2008</td>
+</tr>
+<tr>
+<td>sequential 4th generation</td>
+<td>refuted</td>
+<td>beyond</td>
+<td>new generation rung extrapolating the 3-generation pattern</td>
+<td>representative review: Frampton, Hung &amp; Sher, Phys. Rept. 330,
+263 (2000)</td>
+<td>excluded at 5.3σ (perturbative sequential SM4): Eberhardt et al.,
+Phys. Rev. Lett. 109, 241802 (2012)</td>
+</tr>
+<tr>
+<td>free fractional-charge quarks</td>
+<td>refuted</td>
+<td>beyond</td>
+<td>isolable fractional charges implied by the naive quark model</td>
+<td>Gell-Mann, Phys. Lett. 8, 214 (1964) [explicitly hedged]; Zweig,
+CERN-TH-401/412 (1964)</td>
+<td>cumulative nulls: Lyons, Phys. Rept. 129, 225 (1985); PDG Free Quark
+Searches (Phys. Rev. D 86, 010001, 2012): ‘no evidence for free quarks …
+uncorroborated events’</td>
+</tr>
+<tr>
+<td>glueballs</td>
+<td>open</td>
+<td>beyond</td>
+<td>gluon-only bound states from QCD self-coupling</td>
+<td>Fritzsch &amp; Gell-Mann, Proc. XVI ICHEP (Chicago 1972) Vol. 2, 135
+[first speculation]; Fritzsch &amp; Minkowski, Nuovo Cimento A 30, 393
+(1975)</td>
+<td>open: f0(1500)/f0(1710) mixing candidates; BESIII X(2370) 0-+
+candidate, Phys. Rev. Lett. 132, 181901 (2024)</td>
+</tr>
+<tr>
+<td>magnetic monopole</td>
+<td>open</td>
+<td>beyond</td>
+<td>charge quantization (Dirac)</td>
+<td>Dirac, Proc. R. Soc. Lond. A 133, 60 (1931)</td>
+<td>open: MoEDAL excludes m ≤ 80 GeV for 2-45 Dirac charges, Phys.
+Rev. Lett. 133, 071803 (2024)</td>
+</tr>
+<tr>
+<td>axion</td>
+<td>open</td>
+<td>beyond</td>
+<td>Peccei-Quinn symmetry breaking</td>
+<td>Peccei &amp; Quinn, Phys. Rev. Lett. 38, 1440 (1977); Weinberg,
+Phys. Rev. Lett. 40, 223 (1978); Wilczek, Phys. Rev. Lett. 40, 279
+(1978)</td>
+<td>open: ADMX excludes DFSZ 3.27-3.34 µeV, Phys. Rev. Lett. 134, 111002
+(2025); most of the band untested</td>
+</tr>
+<tr>
+<td>superpartners (naturalness window)</td>
+<td>open</td>
+<td>beyond</td>
+<td>doubling of the spectrum with spin shifted by 1/2</td>
+<td>Barbieri &amp; Giudice, Nucl. Phys. B 306, 63 (1988)</td>
+<td>open/eroded: Run-2 limits gluino ~2.4 TeV, stop ~1.25 TeV
+(arXiv:2506.06839); Δ≤10 colored window excluded</td>
+</tr>
+</tbody>
+</table>
+<h2 id="precision">Precision</h2>
+<ul>
+<li>closed predictions: <strong>12</strong> (8 confirmed, 4 refuted); 4
+open (excluded)</li>
+<li><strong>precision = 66.7%</strong>, Wilson 95% interval [39.1%,
+86.2%]</li>
+</ul>
+<h3 id="sensitivity-to-contested-grouping-choices">Sensitivity to
+contested grouping choices</h3>
+<ul>
+<li>baseline: one entry per prediction program: 66.7% [39.1%,
+86.2%]</li>
+<li>4th generation counted as four species: 53.3% [30.1%, 75.2%]</li>
+<li>antidecuplet counted as one program: 72.7% [43.4%, 90.3%]</li>
+<li>free quarks excluded (hedged original prediction): 72.7% [43.4%,
+90.3%]</li>
+</ul>
+<h2
+id="inter-rater-reliability-blind-second-rater-pass-2026-07-17">Inter-rater
+reliability (blind second-rater pass, 2026-07-17)</h2>
+<p>A second independent rater received only the redacted prediction
+texts and the pre-registered criteria — no outcomes, statuses, or
+first-rater labels. (Caveat: like any expert rater, not blind to world
+knowledge of famous outcomes.)</p>
+<ul>
+<li><strong>within/beyond labels: 100% agreement, Cohen’s κ =
+1.00</strong> — the load-bearing classification is fully
+corroborated</li>
+<li>in-class labels: 56% agreement; the second rater is stricter,
+excluding dynamics-derived multiplets and mechanism-based predictions:
+Theta+(1540), Xi3/2–(1862), free fractional-charge quarks, glueballs,
+magnetic monopole, axion, superpartners (naturalness window)</li>
+<li>strict (rater-2) precision: <strong>8/9 = 88.9%</strong> [56.5%,
+98.0%] — precision <em>rises</em> under the stricter reading</li>
+<li>within/beyond Fisher probability: 0.002 (inclusive labels) vs 0.11
+(strict labels — only one beyond-pattern prediction survives as
+in-class, so the split stays directionally identical but loses small-n
+significance)</li>
+</ul>
+<p>Reconciliation: both readings are defensible under the pre-registered
+wording (criterion 1 is ambiguous for multiplets <em>derived from</em>
+dynamics); we therefore report the rater range 67–89% rather than
+forcing one value.</p>
+<h2 id="within--vs-beyond-pattern-split">Within- vs beyond-pattern
+split</h2>
+<ul>
+<li>within-pattern completions: <strong>8/8 confirmed</strong></li>
+<li>beyond-pattern extrapolations: <strong>0/4 confirmed</strong></li>
+<li>Fisher exact probability of this split under a random null:
+<strong>p ≈ 0.002</strong></li>
+</ul>
+<p>Failures concentrate exactly where the ablation experiments’
+isolated-state finding predicts: positing a new copy of a pattern (a
+fourth generation, a new antidecuplet, a new state category) fails;
+completing a partially-filled pattern succeeds.</p>
+</body>
+</html>

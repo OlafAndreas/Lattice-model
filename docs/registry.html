@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>LM-2026 Forward Prediction Registry</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="site.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">LM-2026 Forward Prediction Registry</h1>
+</header>
+<h1 id="registered-forward-predictions-doubly-heavy-baryons">Registered
+Forward Predictions — Doubly-Heavy Baryons</h1>
+<p><strong>Registered: 2026-07-17.</strong> Method frozen as of this
+date in <code>lattice/constituent.py</code> (regenerate exactly via
+<code>python -c "from lattice.constituent import forward_predictions; ..."</code>;
+all values asserted in <code>tests/test_constituent.py</code>).</p>
+<p>This is the framework’s transition from retrodiction to prediction.
+The historical audit (<code>data/output/audit_report.md</code>) found
+lattice-style gap-prediction went <strong>8/8 on within-pattern
+completions and 0/4 on beyond-pattern extrapolations</strong>. The
+targets below are chosen strictly from the within-pattern regime:
+ground-state slots of partially-instantiated baryon multiplets whose
+neighbors are measured.</p>
+<h2 id="method">Method</h2>
+<p>Additive constituent-quark model fit by least squares over the 21
+curated known baryons (features: strange/charm/bottom quark counts +
+spin-3/2 flag; <code>lattice/constituent.py</code>). In-sample
+leave-one-out RMS: <strong>33 MeV</strong> (20 evaluable baryons).
+Out-of-sample validation: the <strong>Ω_cc⁺</strong>, announced by LHCb
+on 2026-06-03 (~3727 MeV) and deliberately excluded from training, is
+predicted at <strong>3775 MeV — a 48 MeV miss</strong>. The quoted
+uncertainty is therefore ±48 MeV (the larger of the two), and the
+validation miss has a known sign: the additive model lacks explicit
+heavy-pair binding, so true masses are expected to sit <strong>at or
+below</strong> the central values.</p>
+<h2 id="predictions">Predictions</h2>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr>
+<th>ID</th>
+<th>state</th>
+<th>content</th>
+<th>J^P</th>
+<th>cell (Q, S, C, B̃)</th>
+<th>predicted mass</th>
+<th>status at registration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LM-2026-001</td>
+<td><strong>Ξ_bb⁰ / Ξ_bb⁻</strong></td>
+<td>bbu / bbd</td>
+<td>½⁺</td>
+<td>(0 or −1, 0, 0, −2)</td>
+<td><strong>10 250 ± 48 MeV</strong></td>
+<td>unobserved</td>
+</tr>
+<tr>
+<td>LM-2026-002</td>
+<td><strong>Ω_bb⁻</strong></td>
+<td>bbs</td>
+<td>½⁺</td>
+<td>(−1, −1, 0, −2)</td>
+<td><strong>10 410 ± 48 MeV</strong></td>
+<td>unobserved</td>
+</tr>
+<tr>
+<td>LM-2026-003</td>
+<td><strong>Ξ_bc⁺ / Ξ_bc⁰</strong></td>
+<td>bcu / bcd</td>
+<td>½⁺</td>
+<td>(+1 or 0, 0, +1, −1)</td>
+<td><strong>6 932 ± 48 MeV</strong></td>
+<td>unobserved; LHCb reports unconfirmed hints at 6 571 / 6 694 MeV
+(4.3σ / 4.1σ local) — <em>below</em> our estimate</td>
+</tr>
+<tr>
+<td>LM-2026-004</td>
+<td><strong>Ω_bc⁰</strong></td>
+<td>bcs</td>
+<td>½⁺</td>
+<td>(0, −1, +1, −1)</td>
+<td><strong>7 092 ± 48 MeV</strong></td>
+<td>unobserved</td>
+</tr>
+<tr>
+<td>LM-2026-005</td>
+<td><strong>Ξ_cc⁺</strong></td>
+<td>ccd</td>
+<td>½⁺</td>
+<td>(+1, 0, +2, 0)</td>
+<td><strong>3 614 ± 48 MeV</strong></td>
+<td>unobserved; <strong>discriminating</strong>: SELEX’s unconfirmed 3
+519 MeV claim sits ~2σ below — if SELEX is right, this entry is a
+miss</td>
+</tr>
+<tr>
+<td>LM-2026-006</td>
+<td><strong>Ω_ccc⁺⁺</strong></td>
+<td>ccc</td>
+<td>3/2⁺</td>
+<td>(+2, 0, +3, 0)</td>
+<td><strong>cell-level</strong>: ≤ 5 158 MeV (additive upper bound;
+expected ~300–400 below; lattice QCD ~4 800)</td>
+<td>unobserved — “the Ω⁻ of charm”</td>
+</tr>
+<tr>
+<td>LM-2026-007</td>
+<td><strong>Ω_bbb⁻</strong></td>
+<td>bbb</td>
+<td>3/2⁺</td>
+<td>(−1, 0, 0, −3)</td>
+<td><strong>cell-level</strong>: ≤ 15 112 MeV (additive upper bound;
+expected ~500–700 below; lattice QCD ~14 400)</td>
+<td>unobserved — “the Ω⁻ of beauty”</td>
+</tr>
+</tbody>
+</table>
+<p>Entries 006–007 are registered <strong>cell-level only</strong>
+(existence, quantum numbers, mass band, and an upper bound): three
+heavy-quark pairs put the additive model outside its validated regime,
+and the registration says so rather than pretending precision.</p>
+<p>Validation row LM-2026-V01 (not a prediction): Ω_cc⁺ (ccs, ½⁺)
+predicted 3 775 ± 48 vs LHCb ~3 727 MeV — within the quoted band.</p>
+<h2 id="falsification-criteria">Falsification criteria</h2>
+<ul>
+<li>A registered state observed with ground-state quantum numbers whose
+mass lies <strong>within ±2σ (±96 MeV)</strong> of the central value:
+hit.</li>
+<li>Observed <strong>outside ±3σ (±144 MeV)</strong>: miss (counts
+against the framework in any future audit update, exactly like the
+corpus’s refuted entries).</li>
+<li>If the LHCb Ξ_bc hints at 6 571/6 694 MeV are confirmed as the ½⁺
+ground state, that is a <strong>miss</strong> (≥5σ below our central
+value) — we do not reserve the right to reinterpret.</li>
+<li>No observation is a null result, not a hit.</li>
+</ul>
+<h2 id="honest-context">Honest context</h2>
+<p>Sharper predictions exist and predate ours: e.g., Karliner &amp;
+Rosner give Ξ_bb ≈ 10 162 ± 12 MeV (Phys. Rev. D 90, 094007 framework),
+and lattice QCD is more precise still. We are not competing on
+precision. The registered claim is about the <em>framework</em>: a
+deliberately minimal, fully-reproducible lattice + additive fit, whose
+every ingredient is tested, registering its own numbers before the fact.
+Note our central values sit ~90 MeV above Karliner-Rosner’s — consistent
+with the known additive-model bias direction stated above; if the
+discoveries land on the sharper predictions, our ±2σ windows still
+contain them (Ξ_bb: KR’s 10 162 is 88 MeV below our 10 250, within
+2σ).</p>
+<h2 id="timestamping">Timestamping</h2>
+<p>This file, the frozen code, and the test suite constitute the
+registration. <strong>Independent timestamp: archived at Zenodo as DOI
+<a
+href="https://doi.org/10.5281/zenodo.21410220">10.5281/zenodo.21410220</a>
+(published 2026-07-17), with the source at
+https://github.com/OlafAndreas/Lattice-model (commit
+b109204).</strong></p>
+</body>
+</html>

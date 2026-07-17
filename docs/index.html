@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LatticeModel — Lattice-Gap Prediction in Particle Physics</title>
+<meta name="description" content="A reproducible statistical evaluation of Mendeleev-style gap-prediction across the particle zoo, with an interactive 3D explorer and the LM-2026 forward prediction registry.">
+<style>
+  :root {
+    --surface: #fcfcfb; --panel: #f4f4f1; --ink: #262625; --ink2: #6b6a63;
+    --grid: #e3e3dd; --accent: #2a78d6;
+    --s0: #2a78d6; --s1: #008300; --s2: #e87ba4; --s3: #eda100; --s4: #1baf7a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --surface: #1a1a19; --panel: #232322; --ink: #f5f5f2;
+            --ink2: #c3c2b7; --grid: #33332f; --accent: #3987e5;
+            --s0: #3987e5; --s2: #d55181; --s3: #c98500; --s4: #199e70; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--surface); color: var(--ink);
+         font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  main { max-width: 52rem; margin: 0 auto; padding: 3rem 1.25rem 4rem; }
+  .eyebrow { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+             color: var(--ink2); font-weight: 650; }
+  h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); letter-spacing: -0.015em;
+       line-height: 1.15; margin: 0.4rem 0 1rem; text-wrap: balance; }
+  .lede { color: var(--ink2); max-width: 40rem; margin-bottom: 0.8rem; }
+  .badges { display: flex; gap: 0.6rem; flex-wrap: wrap; margin: 1.2rem 0 2.4rem; }
+  .badges a { display: inline-flex; align-items: center; gap: 0.4rem;
+              font-size: 0.8rem; text-decoration: none; color: var(--ink2);
+              border: 1px solid var(--grid); border-radius: 999px;
+              padding: 0.32rem 0.8rem; }
+  .badges a:hover { color: var(--accent); border-color: var(--accent); }
+  .cards { display: grid; gap: 0.9rem;
+           grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+  .card { display: block; text-decoration: none; color: inherit;
+          background: var(--panel); border: 1px solid var(--grid);
+          border-radius: 12px; padding: 1.1rem 1.2rem 1.15rem;
+          border-top: 3px solid var(--card-c, var(--grid)); }
+  .card:hover { border-color: var(--card-c, var(--accent)); }
+  .card h2 { margin: 0 0 0.35rem; font-size: 1.02rem; }
+  .card p { margin: 0; font-size: 0.86rem; color: var(--ink2); }
+  .numbers { margin: 2.6rem 0 0; padding: 1.2rem 1.4rem;
+             border: 1px solid var(--grid); border-radius: 12px;
+             font-size: 0.9rem; }
+  .numbers strong { font-variant-numeric: tabular-nums; }
+  .numbers ul { margin: 0.5rem 0 0; padding-left: 1.2rem; }
+  .numbers li { margin: 0.25rem 0; }
+  footer { margin-top: 3rem; font-size: 0.8rem; color: var(--ink2); }
+  footer a { color: inherit; }
+</style>
+</head>
+<body>
+<main>
+  <div class="eyebrow">LatticeModel</div>
+  <h1>Lattice-gap prediction in particle physics, with error bars</h1>
+  <p class="lede">Mendeleev predicted gallium from a gap in a table. Gell-Mann
+  predicted the Ω⁻ the same way. This project asks — and measures — how much
+  better than chance that inference pattern actually is, then registers its
+  own falsifiable predictions.</p>
+
+  <div class="badges">
+    <a href="https://doi.org/10.5281/zenodo.21410220">DOI 10.5281/zenodo.21410220</a>
+    <a href="https://github.com/OlafAndreas/Lattice-model">GitHub</a>
+    <a href="registry.html">Registered 2026-07-17</a>
+  </div>
+
+  <div class="cards">
+    <a class="card" href="explorer.html" style="--card-c: var(--s0)">
+      <h2>3D OptionSet Lattice ⚛</h2>
+      <p>Interactive explorer: rotate the particle property space, hover any
+      cell, switch to eightfold-way multiplet planes. Known particles,
+      allowed-but-empty gaps, and the ◇ registered predictions.</p>
+    </a>
+    <a class="card" href="paper.html" style="--card-c: var(--s4)">
+      <h2>The paper (v1.3)</h2>
+      <p>Full write-up with methods, fifteen equations, four figures, and
+      every number asserted by the 82-test suite.</p>
+    </a>
+    <a class="card" href="registry.html" style="--card-c: var(--s3)">
+      <h2>Forward prediction registry</h2>
+      <p>LM-2026-001…007: doubly- and triply-heavy baryon cells with mass
+      estimates, pre-committed falsification criteria, and a fresh
+      out-of-sample validation (Ω_cc⁺, June 2026).</p>
+    </a>
+    <a class="card" href="audit.html" style="--card-c: var(--s2)">
+      <h2>Historical precision audit</h2>
+      <p>Sixteen sourced gap-predictions from η (1961) to superpartners:
+      precision 67–89% across two blind raters; every failure was a
+      beyond-pattern extrapolation.</p>
+    </a>
+    <a class="card" href="nullmodels.html" style="--card-c: var(--s1)">
+      <h2>Null-model baselines</h2>
+      <p>Leave-one-out recovery vs chance, permutation tests, jitter
+      robustness, and the operating curve behind the headline numbers.</p>
+    </a>
+  </div>
+
+  <div class="numbers">
+    <strong>The headline numbers.</strong>
+    <ul>
+      <li>46 leave-one-out ablations: true cells rank at mean percentile
+      <strong>0.137</strong> vs 0.5 under chance (p ≈ 7×10⁻¹⁸).</li>
+      <li>Searching the top 5% of candidates by proximity captures
+      <strong>63%</strong> of true cells — <strong>12.6×</strong> the chance
+      rate.</li>
+      <li>Ω⁻ mass reproduced to <strong>0.8%</strong> (GMO), τ mass to
+      <strong>0.008%</strong> (Koide) — both as passing unit tests.</li>
+      <li>Held-out validation: Ω_cc⁺ predicted at 3 775 MeV; LHCb measured
+      ~3 727 (June 2026).</li>
+    </ul>
+  </div>
+
+  <footer>
+    Olaf Andreas Øvrum · MIT license · built with a fully-tested Python
+    pipeline; this site is static HTML generated by
+    <a href="https://github.com/OlafAndreas/Lattice-model/blob/main/scripts/build_site.sh">scripts/build_site.sh</a>.
+    Prepared with Claude (Anthropic).
+  </footer>
+</main>
+</body>
+</html>

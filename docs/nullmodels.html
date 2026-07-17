@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Null-Model Baseline Report</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="site.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Null-Model Baseline Report</h1>
+</header>
+<h1 id="null-model-baseline-report">Null-model baseline report</h1>
+<h2 id="recovery-rank-experiment-leave-one-out-both-layers">1.
+Recovery-rank experiment (leave-one-out, both layers)</h2>
+<p>Remove each known particle; rank its true cell among all candidate
+slots by proximity to remaining known structure (ascending novelty).
+Null: the true cell is a uniformly random candidate (percentile
+0.5).</p>
+<ul>
+<li>evaluable ablations: <strong>46</strong> (degenerate cells excluded;
+0 unrecovered)</li>
+<li>mean proximity percentile: <strong>0.133</strong> (null: 0.5)</li>
+<li>z = 8.6, one-sided <strong>p ≈ 3.0e-18</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>particle</th>
+<th>layer</th>
+<th>percentile</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Xi0</td>
+<td>hadron</td>
+<td>0.002</td>
+</tr>
+<tr>
+<td>Delta+</td>
+<td>hadron</td>
+<td>0.002</td>
+</tr>
+<tr>
+<td>K*+</td>
+<td>hadron</td>
+<td>0.004</td>
+</tr>
+<tr>
+<td>Bs0</td>
+<td>hadron</td>
+<td>0.004</td>
+</tr>
+<tr>
+<td>K+</td>
+<td>hadron</td>
+<td>0.006</td>
+</tr>
+<tr>
+<td>rho+</td>
+<td>hadron</td>
+<td>0.006</td>
+</tr>
+<tr>
+<td>K*0</td>
+<td>hadron</td>
+<td>0.008</td>
+</tr>
+<tr>
+<td>muon</td>
+<td>fundamental</td>
+<td>0.008</td>
+</tr>
+<tr>
+<td>tau</td>
+<td>fundamental</td>
+<td>0.009</td>
+</tr>
+<tr>
+<td>Xi-</td>
+<td>hadron</td>
+<td>0.010</td>
+</tr>
+<tr>
+<td>charm</td>
+<td>fundamental</td>
+<td>0.011</td>
+</tr>
+<tr>
+<td>top</td>
+<td>fundamental</td>
+<td>0.011</td>
+</tr>
+<tr>
+<td>pi+</td>
+<td>hadron</td>
+<td>0.012</td>
+</tr>
+<tr>
+<td>Sigma-</td>
+<td>hadron</td>
+<td>0.015</td>
+</tr>
+<tr>
+<td>strange</td>
+<td>fundamental</td>
+<td>0.016</td>
+</tr>
+<tr>
+<td>bottom</td>
+<td>fundamental</td>
+<td>0.017</td>
+</tr>
+<tr>
+<td>B0</td>
+<td>hadron</td>
+<td>0.018</td>
+</tr>
+<tr>
+<td>K0</td>
+<td>hadron</td>
+<td>0.019</td>
+</tr>
+<tr>
+<td>Sigma*+</td>
+<td>hadron</td>
+<td>0.024</td>
+</tr>
+<tr>
+<td>Xi*0</td>
+<td>hadron</td>
+<td>0.026</td>
+</tr>
+<tr>
+<td>Xi*-</td>
+<td>hadron</td>
+<td>0.027</td>
+</tr>
+<tr>
+<td>Delta0</td>
+<td>hadron</td>
+<td>0.028</td>
+</tr>
+<tr>
+<td>Delta-</td>
+<td>hadron</td>
+<td>0.028</td>
+</tr>
+<tr>
+<td>Sigma*0</td>
+<td>hadron</td>
+<td>0.028</td>
+</tr>
+<tr>
+<td>Sigma*-</td>
+<td>hadron</td>
+<td>0.028</td>
+</tr>
+<tr>
+<td>D+</td>
+<td>hadron</td>
+<td>0.028</td>
+</tr>
+<tr>
+<td>Ds+</td>
+<td>hadron</td>
+<td>0.032</td>
+</tr>
+<tr>
+<td>D0</td>
+<td>hadron</td>
+<td>0.037</td>
+</tr>
+<tr>
+<td>B+</td>
+<td>hadron</td>
+<td>0.037</td>
+</tr>
+<tr>
+<td>Sigma+</td>
+<td>hadron</td>
+<td>0.046</td>
+</tr>
+<tr>
+<td>Omega-</td>
+<td>hadron</td>
+<td>0.051</td>
+</tr>
+<tr>
+<td>Delta++</td>
+<td>hadron</td>
+<td>0.059</td>
+</tr>
+<tr>
+<td>eta_c</td>
+<td>hadron</td>
+<td>0.114</td>
+</tr>
+<tr>
+<td>up</td>
+<td>fundamental</td>
+<td>0.117</td>
+</tr>
+<tr>
+<td>down</td>
+<td>fundamental</td>
+<td>0.117</td>
+</tr>
+<tr>
+<td>Lambda_c+</td>
+<td>hadron</td>
+<td>0.176</td>
+</tr>
+<tr>
+<td>higgs</td>
+<td>fundamental</td>
+<td>0.294</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>fundamental</td>
+<td>0.297</td>
+</tr>
+<tr>
+<td>electron</td>
+<td>fundamental</td>
+<td>0.329</td>
+</tr>
+<tr>
+<td>Lambda_b0</td>
+<td>hadron</td>
+<td>0.365</td>
+</tr>
+<tr>
+<td>n</td>
+<td>hadron</td>
+<td>0.469</td>
+</tr>
+<tr>
+<td>Xi_cc++</td>
+<td>hadron</td>
+<td>0.471</td>
+</tr>
+<tr>
+<td>p</td>
+<td>hadron</td>
+<td>0.488</td>
+</tr>
+<tr>
+<td>W</td>
+<td>fundamental</td>
+<td>0.698</td>
+</tr>
+<tr>
+<td>photon</td>
+<td>fundamental</td>
+<td>0.732</td>
+</tr>
+<tr>
+<td>gluon</td>
+<td>fundamental</td>
+<td>0.775</td>
+</tr>
+</tbody>
+</table>
+<p>Honest reading: pattern-fillers (quarks, leptons, multiplet members)
+rank in the top few percent; isolated states (photon, gluon, W) rank
+worse than chance — proximity ranking predicts <em>completions of
+existing structure</em>, not lone outliers.</p>
+<h2 id="loocv-label-permutation-test">2. LOOCV label-permutation
+test</h2>
+<ul>
+<li>observed LOOCV accuracy: <strong>100%</strong></li>
+<li>permuted labels (n=200): mean 18.9%, max 52.9%</li>
+<li><strong>p = 0.0050</strong> (floor for 200 permutations)</li>
+</ul>
+<h2 id="mass-predictions-vs-naive-mean-null">3. Mass predictions vs
+naive-mean null</h2>
+<table>
+<thead>
+<tr>
+<th>tool</th>
+<th>predicted</th>
+<th>measured</th>
+<th>rel. error</th>
+<th>null (mean) error</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>koide_tau</td>
+<td>1,777 MeV</td>
+<td>1,777 MeV</td>
+<td>0.008%</td>
+<td>97%</td>
+</tr>
+<tr>
+<td>gmo_omega</td>
+<td>1,685 MeV</td>
+<td>1,672 MeV</td>
+<td>0.764%</td>
+<td>19%</td>
+</tr>
+<tr>
+<td>ladder_top</td>
+<td>746,713 MeV</td>
+<td>172,760 MeV</td>
+<td>332.226%</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table>
+<p>Koide and GMO beat the naive baseline by 2–4 orders of magnitude; the
+quark ladder is wrong in MeV (~330%) but still far better than the
+mean-null in log space and lands the correct lattice band.</p>
+<h2 id="filter-selectivity-vs-random-filter-null">4. Filter selectivity
+vs random-filter null</h2>
+<ul>
+<li><strong>fundamental</strong>: keep-rate 37.5%, all 17 knowns pass; a
+random filter of equal selectivity passes all knowns with p ≈
+5.7e-08</li>
+<li><strong>hadron</strong>: keep-rate 1.4%, all 41 knowns pass; a
+random filter of equal selectivity passes all knowns with p ≈
+3.5e-76</li>
+</ul>
+<p>Caveat: in-sample: the filters were written knowing the known
+particles, so this measures structural consistency, not out-of-sample
+discovery power.</p>
+<h2 id="jitter-robustness-10.4">5. Jitter robustness (§10.4)</h2>
+<p><strong>measurement scale (σ=0.01 dex ≈ ±2.3%)</strong>, 50 trials: -
+LOOCV stays 100%: 100% of trials - Higgs / top / Ω⁻ cells recovered:
+100% / 100% / 100% - GMO median rel. error 2.2% (naive-mean null:
+18.7%)</p>
+<p><strong>stress scale (σ=0.1 dex ≈ ±26%)</strong>, 50 trials: - LOOCV
+stays 100%: 100% of trials - Higgs / top / Ω⁻ cells recovered: 100% /
+100% / 100% - GMO median rel. error 19.8% (naive-mean null: 17.2%)</p>
+<p>Finding: slot recovery is structurally robust even at ±26% mass
+noise, but GMO’s <em>precision</em> advantage needs precision inputs —
+at stress scale extrapolation amplifies noise and the naive mean becomes
+competitive.</p>
+<h2 id="operating-curve-pre-registered-decision-rule-10.510.6">6.
+Operating curve / pre-registered decision rule (§10.5–10.6)</h2>
+<p>Rule: pre-registered: flag the top 10% of candidate cells by
+proximity as search targets; under the null, 10% of true cells would be
+flagged by chance. Scored on 46 ablations:</p>
+<table>
+<thead>
+<tr>
+<th>top k%</th>
+<th>hits</th>
+<th>recall</th>
+<th>enrichment</th>
+<th>binomial p</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1%</td>
+<td>10/46</td>
+<td>21.7%</td>
+<td>21.7×</td>
+<td>2.9e-11</td>
+</tr>
+<tr>
+<td>5%</td>
+<td>30/46</td>
+<td>65.2%</td>
+<td>13.0×</td>
+<td>4.2e-28</td>
+</tr>
+<tr>
+<td>10%</td>
+<td>32/46</td>
+<td>69.6%</td>
+<td>7.0×</td>
+<td>5.8e-22</td>
+</tr>
+<tr>
+<td>25%</td>
+<td>36/46</td>
+<td>78.3%</td>
+<td>3.1×</td>
+<td>5.3e-14</td>
+</tr>
+</tbody>
+</table>
+<p>Reading: a search program that takes the top 10% of candidate cells
+by proximity captures the majority of true pattern-completions at ~7×
+the null rate. The top-1% bar is strict in absolute recall but keeps ~7×
+enrichment.</p>
+</body>
+</html>
